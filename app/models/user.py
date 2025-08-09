@@ -79,7 +79,7 @@ class UserSettings(db.Model):
     
     # Relationships
     user = relationship("User", back_populates="settings")
-    reciter = relationship("Reciter")
+    reciter = relationship("Reciter", back_populates="user_settings")
     
     def __repr__(self):
         return f"<UserSettings(user_id={self.user_id}, reciter_id={self.reciter_id})>"
